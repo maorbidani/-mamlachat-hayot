@@ -1,0 +1,6 @@
+{
+  "name": "ממלכת החיות של גאולה",
+  "description": "חוגים • הפעלות • ימי-הולדת • מסיבת סוף שנה • קייטנות — מרכז השליטה להפעלות בעלי חיים, סיכום להורים, ניהול מסגרות ומיתוג.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

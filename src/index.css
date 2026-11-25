@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Rubik', 'Heebo', system-ui, -apple-system, sans-serif;
+    --font-body: 'Heebo', 'Rubik', system-ui, -apple-system, sans-serif;
+    --forest: #1F5E3B;
+    --wood: #6B4423;
+    --gold: #F4B41A;
+    --cream: #FBF8F1;
+  }
+
+  html {
+    font-family: var(--font-body);
+    direction: rtl;
+    scrollbar-gutter: stable;
+    overscroll-behavior-y: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html.dark body {
+    background-color: #131D17;
+    color: #E6EDE8;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+@media print {
+  header,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  body,
+  html,
+  html.dark body {
+    background: #ffffff !important;
+    color: #1C2A21 !important;
+  }
+
+  .print-invoice-backdrop {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .print-invoice-card {
+    box-shadow: none !important;
+    max-height: none !important;
+    border: 1px solid #6B4423 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
